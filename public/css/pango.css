@@ -1,0 +1,532 @@
+/*
+  Theme Name: eBusiness
+  Theme URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+  Author: BootstrapMade.com
+  License: https://bootstrapmade.com/license/
+*/
+
+/*-----------------------------------------------------------------------------------
+   CSS INDEX
+  ===================
+
+  1. Theme Default CSS (body, link color, section etc)
+  2. Header Area
+   2.1 Stick menu Area
+  3. About Area
+  4.Services Area
+  5.Skill Area
+  6.Faq Area
+  7.Wellcome Area
+  8.Team Area
+  9.Review Area
+  10.Portfolio Area
+  11. Pricing Table
+  12. Testimonials area
+  13. Review Area
+  14. Quote area
+  15.Footer Area
+  16.Home Page-2 Area
+  17.Home Page 3  CSS
+  18.Blog CSS
+  17.Blog Details CSS
+
+-----------------------------------------------------------------------------------*/
+
+/*----------------------------------------*/
+/*  1.  Theme default CSS
+/*----------------------------------------*/
+
+html, body {
+    height: 100%;
+  }
+
+  .float-left {
+    float: left;
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .alignleft {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+
+  .alignright {
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+
+  .aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+  }
+
+  a:focus {
+    outline: 0px solid;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .fix {
+    overflow: hidden;
+  }
+
+  p {
+    margin: 0 0 15px;
+    color: #444;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    margin: 0 0 15px;
+    color: #444;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: 48px;
+    line-height: 50px;
+  }
+
+  h2 {
+    font-size: 38px;
+    line-height: 40px;
+  }
+
+  h3 {
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  h4 {
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  h5 {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  h6 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #3EC1D5;
+    text-decoration: none;
+  }
+
+  a:active, a:hover {
+    outline: 0 none;
+  }
+
+  body {
+    /* background: #fff none repeat scroll 0 0; */
+    /* background-image: url(../img/slider/slider4.webp);
+    background-size: cover; */
+    color: #444;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    text-align: left;
+    overflow-x: hidden;
+    line-height: 22px;
+  }
+  .article{
+    height: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .left-tab {
+    float: left;
+    width: 20%;
+    height: 2350px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 150px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    transition: 0.5s ease-in-out;
+  }
+  .right-tab {
+    position: relative;
+    width: 80%;
+    float: right;
+    padding: 50px 0px;
+    transition: 0.5s ease-in-out;
+  }
+  .list-group {
+    background-color: inherit !important;
+    margin-top: 50px;;
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  .st-nav {
+    padding: 20px 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.40);
+    text-align: center;
+    margin-left: 0px;
+    color: white;
+    /* border: 1px solid rgba(0, 0, 0, 0.40); */
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+  }
+
+  .st-nav:hover{
+    background-color: rgba(43,57,144,0.8);
+    font-size: large;
+    /* border: 2px solid rgba(241, 90, 41, 0.8); */
+    /* transform: scale(1.1); */
+  }
+  .level-list {
+    padding: 50px 0px;
+    display: none;
+  }
+  .margin-auto {
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  }
+  .bg-secondary {
+    background-color: rgba(0, 174, 239, 0.8);
+  }
+  .bg-orange {
+    background-color: rgba(241, 90, 41, 0.8);
+  }
+  .st-nav-icon {
+    padding: 0px 20px;
+    color: rgba(241, 90, 41, 0.9);
+    font-size: x-large;
+  }
+  .text-color-white {
+    color: white;
+  }
+  .level-list button {
+    transition: 0.5s ease-in-out;
+  }
+  .level-list button:hover{
+    background-color: rgba(43,57,144,0.8);
+    color: white;
+  }
+  .search-area {
+    padding: 50px 0px;
+  }
+  #search {
+    border:none;
+    border-bottom: 2px solid rgba(241, 90, 41, 0.8);
+    outline: none;
+    padding: 15px;
+  }
+  .search-btn {
+    background-color: rgba(0, 174, 239, 0.8);
+    color: white;
+    transition: 0.5s ease-in-out;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  .search-btn:hover {
+    background-color: rgba(43,57,144,0.8);
+    color: white;
+  }
+  .box-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .material-desc {
+    height: 260px;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    overflow:hidden;
+  }
+  .material-desc:hover {
+  /* border: 3px solid rgba(0, 174, 239, 0.8); */
+  transform: scale(1.1);
+  }
+  .margin-bottom {
+    margin: 30px;
+  }
+  .subject {
+    background-color: rgba(0, 174, 239, 0.7);
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px 5px 0px 0px;
+    font-weight: bold;
+  }
+  .material-desc .icon, .tc-material-desc .icon {
+    width: 25%;
+    color: rgba(0, 174, 239, 0.8);
+    padding-top: 40px;
+    font-size: 40px;;
+  }
+  .material-desc .other-desc, .tc-material-desc .other-desc{
+    width: 75%;
+    padding-left: 5px;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    height: 120px;
+    overflow-y: auto;
+  }
+
+  .main-desc {
+    padding: 10px;
+  }
+  .desc-footer {
+    /* background-color: #3EC1D5; */
+    padding: 10px 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .pay button {
+    background-color: rgba(241, 90, 41, 0.9);
+    color: white;
+    transition: 0.5s ease-in-out;
+    margin-top: 15px;
+    border-radius: 30px;
+  }
+  .pay button:hover {
+    background-color: rgba(43,57,144,0.8);
+    color: white;
+  }
+  .text-corp {
+    color: rgba(0, 174, 239, 1);
+  }
+  .user-icon {
+    font-size: 90px;
+    text-align: center;
+    color: rgba(0, 174, 239, 0.8);
+  }
+  .left-nav {
+    padding: 0px 50px;
+    margin-top: 20px;
+  }
+  .left-nav a {
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 0px;
+    text-align: left;
+    transition: 0.5s ease-in-out;
+  }
+  .left-nav a:hover {
+    color: rgba(0, 174, 239, 0.8);
+  }
+  .btn-active {
+    background-color: rgba(43,57,144,0.8);
+  }
+  .left-nav-icon {
+    /* display: none; */
+    padding: 0px 5px;
+    color: rgba(241, 90, 41, 0.9);
+  }
+  .bg-img{
+    display: block;
+    position: fixed;
+    top: -40px;
+    left: -40px;
+    z-index: -1;
+    height: 700px;
+    width: 2000px;
+    padding: 0px;
+  }
+  .menu-toggle {
+    display: block;
+    position: relative;
+    left: 25px;
+    top: 15px;
+    color: rgba(0, 174, 239, 0.8);
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.7);
+    width: 40px;
+    height: 40px;
+    padding: 9px 11px;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+  }
+  .menu-toggle:hover {
+    color: white;
+    background-color: rgba(0, 174, 239, 0.8);}
+
+  /* ACCOUNTANT */
+
+  .bg-corp {
+    background-color: rgba(0, 174, 239, 0.8);
+  }
+  .bg-white-trans {
+    background-color: rgba(255,255,255,0.8);
+  }
+  .left-nav-item:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 10px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+  }
+  .active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }
+  .quick-link-header {
+    color: rgba(255,255,255,0.9);
+  }
+  .quick-link-container:hover {
+    background-color: rgba(43,57,144,0.8);
+    transform: scale(1.1);
+    color: white;
+  }
+  .quick-link-icon {
+    font-size: 25px;
+    color: rgba(241, 90, 41, 0.9);
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .dotted-border-bottom {
+    border-bottom: 1px dotted rgba(0, 174, 239, 0.7);
+    padding-bottom: 10px;
+  }
+  .dashboard-padding {
+    padding: 10px;
+  }
+  .btn-special {
+    border: 2px solid rgba(0, 174, 239, 0.8);
+    background-color: none;
+    border-radius: 20px;
+    transition: 1s ease-in-out;
+  }
+  .btn-special:hover {
+    background-color: rgba(0, 174, 239, 0.8);
+    color: white;
+  }
+  .btn-special-radius {
+    border-radius: 20px;
+    transition: 1s ease-in-out;
+  }
+  .btn-special-radius:hover {
+    color: white;
+  }
+
+/* LOG IN CSS */
+/* body {font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    /* background: url(../img/appartment.jpg);
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+/* } */
+
+.main-container {
+    padding: 0px 0px;
+    /* background: url(../img/appartment.jpg); */
+    background: url(../img/bg3.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 1000px;
+
+}
+
+.login-bar {
+    width:300px;
+    margin:auto;
+    padding: 10px 20px;
+    background-color: rgba(9, 71,55,0.7);
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+.login-form-container {
+    margin: auto;
+    width: 300px;
+    padding: 60px 0px;
+    background-size: cover;
+}
+form {
+    padding: 20px 0px;
+}
+
+.login-btn {
+    background-color:rgba(9, 71, 55,0.7);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 0px;
+    outline: none;
+    border:none;
+    margin-top: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.login-btn:hover {
+    background-color: rgba(9, 71, 55,0.8);
+    /* border: 2px solid rgba(9, 71, 55,1); */
+}
+
+.logo{
+    padding: 20px 10px;
+    font-size: 40px;
+    color:white;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+.login-footer {
+    padding: 20px 10px;
+    /* background-color: white; */
+    color: black;
+}
+
+.errors {
+    padding-left: 70px;
+    margin: auto;
+    color: red;
+    background-color: rgba(0,0,0,0.1);
+}
+
+input {
+border:none;
+padding: 10px;
+width: 100%;
+border-radius: 5px;
+transition: ease-in-out 0.5s;
+}
+
+input:focus {
+    border-bottom: 2px solid rgba(255,255,255,0.8);
+}
+.borderless {
+    border: none;
+    border-bottom: 2px solid rgba(9, 71, 55,0.8);
+    background: transparent;
+    color: white;
+}
+.overlay {
+    background-color: rgba(255,255,255,0.6);
+    z-index: 99;
+}
+  /*----------------------------------------
+   .End CSS
+  ----------------------------------------*/
