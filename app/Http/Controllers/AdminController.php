@@ -4,19 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use App\CompanyOwner;
+use App\Lessee;
+use App\Lessor;
+use App\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
+    public function lessor(){
+        return view('auth.admin.lessor')->with('active',true);
+    }
     public function ownerData(){
-        $owner = CompanyOwner::all();
+        $owner = Lessee::all();
         return view('auth.admin.owner')->with('owner',$owner);
     }
     public function property(){
         return view('auth.admin.property');
     }
-    public function addChairman(Request $request){
+    public function addLessor(Request $request){
         $rules = array(
             // 'file'  => 'required|image|max:2048',
 
@@ -33,7 +39,7 @@ class AdminController extends Controller
             return response()->json(['errors' => $error->errors()->all()]);
         }else{
              
-            CompanyOwner::create([
+            Lessor::create([
                 'name' => $request->name,
                 'address' => $request->address,
                 'phone' => $request->phone,
@@ -61,13 +67,13 @@ class AdminController extends Controller
         if ($error->fails()) {
             return response()->json(['error' => $error->errors()->all()]);
         }else{
-            $update = CompanyOwner::find($request->id);
+            $update = Lessor::find($request->id);
             $update->name = $request->name;
             $update->phone = $request->phone;
             $update->address = $request->address;
             $update->nida = $request->nida;
             $update->save();
-            return response()->json(['success' => "Chairman details updated successfully"]);
+            return response()->json(['success' => "Lessor details updated successfully"]);
         }
     }
 
@@ -91,7 +97,7 @@ class AdminController extends Controller
             return response()->json(['errors' => $error->errors()->all()]);
         }else{
              //owner_id 	name 	address 	licence 	contract_date 	apartment_num 	abbriviation
-            Company::create([
+            Property::create([
                 'name' => $request->name,
                 'address' => $request->address,
                 'owner_id' => $request->owner_id,

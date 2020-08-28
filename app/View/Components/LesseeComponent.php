@@ -2,11 +2,9 @@
 
 namespace App\View\Components;
 
-use App\Company;
-use App\CompanyOwner;
 use Illuminate\View\Component;
 
-class Header extends Component
+class LesseeComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -25,7 +23,6 @@ class Header extends Component
      */
     public function render()
     {
-        return view('components.header');
+        return view('components.lessee-component');
     }
-
 }

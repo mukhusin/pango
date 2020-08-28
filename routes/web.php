@@ -25,8 +25,8 @@ Route::post('/login-user', 'LoginController@login')->name('login-user');
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Admin you must secure this
-Route::get('/owner','AdminController@ownerData')->name('owner');
-Route::post('/addChairman', 'AdminController@addChairman')->name('addChairman');
+Route::get('/lessor','AdminController@lessor')->name('lessor');
+Route::post('/addLessor', 'AdminController@addLessor')->name('addLessor');
 Route::post('/updateChair', 'AdminController@updateChair')->name('updateChair');
 Route::get('/property','AdminController@property')->name('property');
 Route::post('/addProperty', 'AdminController@addProperty')->name('addProperty');

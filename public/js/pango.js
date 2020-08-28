@@ -5,8 +5,50 @@ $(document).ready(function () {
         }
     });
 
+    $('#login-user').ajaxForm({
+       
+        beforeSend: function () {
+            $('#login-user_btn').html('loading ..');
+            $('#login-user_btn').addClass('disabled');
+           
+        },
+        success: function (data) {
 
-    $('#add-chairman').ajaxForm({
+            if (data.errors) {
+                //toastr.error(data.errors);
+                $('#login-user_btn').removeClass('disabled');
+                $('#login-user_btn').html('Sign In');
+                $('#message').html('<span class="text-danger"><b>' + data.errors + '</b></span>');
+            }else{
+               // toastr.success(data.success);
+                // $('#message').html('<span class="text-success"><b>' + data.success + '</b></span>');
+                $('#login-user')[0].reset();
+                window.location.href = data.success;
+
+            }
+
+        },
+        complete: function (data) {
+            $('#chapter_btn').removeClass('disabled');
+            $('#chapter_btn').html('Upload & Save');
+        }
+    });
+    $(function () {
+        $("#example1").DataTable({
+          "responsive": true,
+          "autoWidth": false,
+        });
+        $('#lessorData').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false,
+          "responsive": true,
+        });
+      });
+    $('#add-lessor').ajaxForm({
        
         beforeSend: function () {
             $('#add-cahair').html('Please wait ...');
@@ -18,12 +60,12 @@ $(document).ready(function () {
             if (data.errors) {
                 toastr.error(data.errors);
                 $('#add-cahair').removeClass('disabled');
-                $('#add-cahair').html('Add Chairman');
+                $('#add-cahair').html('Add Lessor');
                 $('#message').html('<span class="text-danger"><b>' + data.errors + '</b></span>');
             }else{
                 toastr.success(data.success);
                 $('#message').html('<span class="text-success"><b>' + data.success + '</b></span>');
-                $('#add-chairman')[0].reset();
+                $('#add-lessor')[0].reset();
                 location.reload();
 
             }
@@ -47,6 +89,7 @@ $(document).ready(function () {
             data: owner,
             success: function (data){
                 if(data.success){
+                    location.reload();
                     toastr.success(data.success);
                 }
                 if(data.error){
@@ -86,32 +129,5 @@ $(document).ready(function () {
         }
     });
 
-    $('#login-user').ajaxForm({
-       
-        beforeSend: function () {
-            $('#login-user_btn').html('Please wait ...');
-            $('#login-user_btn').addClass('disabled');
-           
-        },
-        success: function (data) {
-
-            if (data.errors) {
-                //toastr.error(data.errors);
-                $('#login-user_btn').removeClass('disabled');
-                $('#login-user_btn').html('Sign In');
-                $('#message').html('<span class="text-danger"><b>' + data.errors + '</b></span>');
-            }else{
-               // toastr.success(data.success);
-                // $('#message').html('<span class="text-success"><b>' + data.success + '</b></span>');
-                $('#login-user')[0].reset();
-                window.location.href = data.success;
-
-            }
-
-        },
-        complete: function (data) {
-            $('#chapter_btn').removeClass('disabled');
-            $('#chapter_btn').html('Upload & Save');
-        }
-    });
+   
 });

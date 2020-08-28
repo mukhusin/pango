@@ -2,8 +2,6 @@
 
 namespace App\View\Components;
 
-use App\Company;
-use App\CompanyOwner;
 use Illuminate\View\Component;
 
 class Admin extends Component
@@ -28,13 +26,5 @@ class Admin extends Component
         return view('components.admin');
     }
 
-    public function companies(){
-        return Company::all();
-    }
-    public function companiesCount(){
-        return Company::count();
-    }
-    public function companiesOwner(){
-        return CompanyOwner::count();
-    }
+   
 }

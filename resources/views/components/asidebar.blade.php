@@ -25,7 +25,7 @@
                with font-awesome or any other icon font library -->
   
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="/lessor" class="nav-link  <?php if (isset($active)) { echo 'active'; } ?>" >
               <i class="nav-icon fas fa-user-tie"></i>
               <p>
                 Lessor
