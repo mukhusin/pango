@@ -117,6 +117,10 @@
                         <input type="number" min="0" name="phone"  class="form-control" id="phone" required>
                     </div>
                     <div class="form-group">
+                        <label for="phone">Email:</label>
+                        <input type="email" name="email"  class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
                         <label for="phone">Address:</label>
                         <input type="text" min="0" name="address" class="form-control" id="address" required>
                     </div>

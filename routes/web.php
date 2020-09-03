@@ -20,14 +20,22 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('auth.admin.index');
 });
+Route::get('/lessor', function () {
+    return view('auth.lessor.index');
+});
 Auth::routes();
 Route::post('/login-user', 'LoginController@login')->name('login-user');
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Admin you must secure this
-Route::get('/lessor','AdminController@lessor')->name('lessor');
+//Admin you must secure this by midleware
+Route::get('/lessors-page','AdminController@lessor')->name('lessors-page');
 Route::post('/addLessor', 'AdminController@addLessor')->name('addLessor');
 Route::post('/updateChair', 'AdminController@updateChair')->name('updateChair');
 Route::get('/property','AdminController@property')->name('property');
 Route::post('/addProperty', 'AdminController@addProperty')->name('addProperty');
 Route::post('/updateProperty', 'AdminController@updateProperty')->name('updateProperty');
+
+// lessor zone you must secure this by midleware
+Route::get('/apartment-page', 'ApartmentController@apartment')->name('apartment-page');
+
+

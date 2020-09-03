@@ -2,10 +2,9 @@
 
 namespace App\View\Components;
 
-use App\Property;
 use Illuminate\View\Component;
 
-class PropertyComponent extends Component
+class LessorsComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -24,10 +23,6 @@ class PropertyComponent extends Component
      */
     public function render()
     {
-        return view('components.property-component');
-    }
-    
-    public function property(){
-        return Property::all();
+        return view('components.lessors-component');
     }
 }

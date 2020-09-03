@@ -7,7 +7,9 @@ use App\CompanyOwner;
 use App\Lessee;
 use App\Lessor;
 use App\Property;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -38,15 +40,25 @@ class AdminController extends Controller
         if ($error->fails()) {
             return response()->json(['errors' => $error->errors()->all()]);
         }else{
-             
-            Lessor::create([
-                'name' => $request->name,
-                'address' => $request->address,
-                'phone' => $request->phone,
-                'nida' => $request->nida,
-            ]);
-           
-            return response()->json(['success' => 'Chairman details saved successfully']);
+             $lessor =  User::create([
+                            'role' => 'lessor',
+                            'email' => $request->email,
+                            'username' => $request->phone,
+                            'verification_code' => sha1(now()),
+                            'password' => Hash::make($request->phone),
+                        ]);
+               $id = $lessor->id;
+           if ($id != "") {
+                Lessor::create([
+                    'name' => $request->name,
+                    'address' => $request->address,
+                    'phone' => $request->phone,
+                    'nida' => $request->nida,
+                    'user_id' => $id,
+                ]);
+           }
+            
+            return response()->json(['success' => 'Lessor details saved successfully']);
         }
        
     }

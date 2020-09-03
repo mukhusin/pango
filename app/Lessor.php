@@ -16,10 +16,10 @@ class Lessor extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'name','phone','address','nida'
+        'name','phone','address','nida','user_id'
     ];
 
-    public function owner(){
+    public function property(){
         return $this->hasMany(Property::class);
     }
 }

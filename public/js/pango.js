@@ -14,24 +14,20 @@ $(document).ready(function () {
         },
         success: function (data) {
 
-            if (data.errors) {
-                //toastr.error(data.errors);
+            if (data.error) {
+                 toastr.error(data.error);
                 $('#login-user_btn').removeClass('disabled');
                 $('#login-user_btn').html('Sign In');
-                $('#message').html('<span class="text-danger"><b>' + data.errors + '</b></span>');
-            }else{
-               // toastr.success(data.success);
-                // $('#message').html('<span class="text-success"><b>' + data.success + '</b></span>');
+                $('#message').html('<span class="text-danger"><b>' + data.error + '</b></span>');
+            }
+            if (data.success) {
+                //toastr.error(data.errors);
                 $('#login-user')[0].reset();
                 window.location.href = data.success;
-
             }
 
         },
-        complete: function (data) {
-            $('#chapter_btn').removeClass('disabled');
-            $('#chapter_btn').html('Upload & Save');
-        }
+       
     });
     $(function () {
         $("#example1").DataTable({

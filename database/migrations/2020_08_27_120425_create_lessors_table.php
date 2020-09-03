@@ -16,6 +16,7 @@ class CreateLessorsTable extends Migration
 
         Schema::create('lessors', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('name');
             $table->string('phone');
             $table->string('address');

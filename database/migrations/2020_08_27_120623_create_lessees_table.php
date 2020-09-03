@@ -16,6 +16,7 @@ class CreateLesseesTable extends Migration
         Schema::create('lessees', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('apartment_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('name');
             $table->string('phone');
             $table->string('address');

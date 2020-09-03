@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     protected function login(Request $request){
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        if (Auth::attempt(array($fieldType => $request->username, 'password' => $request->password))) {
             $role = Auth::user()->role;
             switch ($role) {
                 case 'admin':
@@ -20,11 +21,11 @@ class LoginController extends Controller
                     return response()->json($output);
                     break;
                 case 'lessee':
-                    $output = array('success' => "/lessor");
+                    $output = array('success' => "/lessee");
                     return response()->json($output);
                     break;
                 case 'accountant':
-                    $output = array('success' => "/lessor");
+                    $output = array('success' => "/accountant");
                     return response()->json($output);
                     break;      
                 default:
@@ -32,9 +33,11 @@ class LoginController extends Controller
                     return response()->json($output);
                     break;
             }
+        }else {
+            $output = array('error' => "Invalid Password or username !!");
+            return response()->json($output);
         }
-        $output = array('error' => "Invalid Password or Enail !!");
-        return response()->json($output);
+       
 
     }
 }

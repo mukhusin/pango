@@ -19,10 +19,10 @@ class Property extends Model
          'name','owner_id','address','licence','contract_date','apartment_num','abbriviation'
      ];
  
-     public function lessee(){
-         return $this->belongsTo(CompanyOwner::class);
+     public function lessor(){
+         return $this->belongsTo(Lessor::class);
      }
      public function apartment(){
-         return $this->hasMany(Apartment::class);
+         return $this->belongsTo(Property::class);
      }
 }
